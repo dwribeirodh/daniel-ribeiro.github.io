@@ -25,7 +25,7 @@ p {
   text-justify: inter-word;
   width: 90%;
   font-family: serif;
-  font-size: 25px;
+  font-size: 18px;
 }
 
 .column {
@@ -41,34 +41,63 @@ p {
   display: table;
 }
 
+/* Dropdown Button */
+.dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
 </style>
 </head>
 <body>
 
-<h1 style="text-align:center;">Welcome to Daniel's First Website</h1>
+<h1 style="text-align:center;">Welcome to Daniel's Website</h1>
 <hr>
-<p>I'm learning HTML and while I do so I will try to post some cool things I have been working on. For this first version of the website
-I wanted to include two gifs of some work I've done in computational physics with the annealing of the Ising model.</p>
+<p> Welcome to my first website! I am developing this website in HTML
+and hosting it on Github Pages. In here you can find some info about me, as
+well as some of some projects I have worked on in the past.
 
-<h2 style="text-align:center;">Wolff Algorithm Convergence</h2>
-<p>
-The gifs below show the converging behavior of the 2D Ising model with periodic boundary conditions via simulation using the <a href="https://en.wikipedia.org/wiki/Wolff_algorithm">Wolff algorithm</a>.
-The animation on the left depicts the convergence of the magnetization of the system, while the animation on the right
-depicts the convergence of internal energy. Both thermodynamic quantities are normalized by the total number of spins in the system. All simulations were coded using the <a href="https://julialang.org/">Julia language</a>.
-Source code will be made available shortly, stay tuned!!</p>
-
-<div class="row">
-  <div class="column">
-    <img src="wolff_mag.gif" style="width:100%">
-  </div>
-  <div class="column">
-    <img src="wolff_energy.gif" style="width:100%">
+<div class="dropdown">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
   </div>
 </div>
-
-<p style="text-align:left;"> Going into a little bit of detail on the animations, the left side of is a representation of the 2D Ising lattice, comprised of binary spins that take value -1 or 1. The percentage number is the ratio of
-number of spin flips to the total number of spin flips being used as a parameter of the simulation. The large number above the graph is the real-time update of the number of spins that have been flipped during
-the simulation. Lastly, the orange line represents the equilibrium solution for that particular temperature. </p>
-
-</body>
-</html>
